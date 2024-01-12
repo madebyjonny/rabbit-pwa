@@ -1,8 +1,10 @@
 import { ChatOpenAI } from "@langchain/openai";
 import { HumanMessage } from "@langchain/core/messages";
 import type { APIRoute } from "astro";
+import "dotenv/config";
 
 const chat = new ChatOpenAI({
+  openAIApiKey: process.env.OPENAI_API_KEY,
   temperature: 0.9,
 });
 

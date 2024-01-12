@@ -3,7 +3,10 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title='Rabbit"'>
-  <video src="/rabbit.webm" id="rabbit" class="rabbit" loop></video>
+  <video id="rabbit" class="video" loop poster="/rabbit.png">
+    <source src="/rabbit.mp4" type="video/mp4" />
+    <source src="/rabbit.webm" type="video/webm" />
+  </video>
   <section id="messages" class="messages"></section>
   <button id="ctrl-voice" data-loading="false">
     <span class="btn-content">Ask</span>
@@ -16,6 +19,9 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style is:global>
+  .video {
+    max-width: 50%;
+  }
   .messages {
     width: 70%;
     margin: 0 auto;
